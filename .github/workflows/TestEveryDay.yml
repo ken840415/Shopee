@@ -73,7 +73,14 @@ jobs:
           document: 三多偉力健關鍵營養素.xlsx
 
 
-
+      - name: send Line Notify message
+        uses: louis70109/line-notify-action@master
+        with:
+          token: ${{ secrets.LINENOTIFYTOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          file: 三多偉力健關鍵營養素.html
+         # image_file: 三多偉力健關鍵營養素.png
 
 
 
