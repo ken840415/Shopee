@@ -42,7 +42,7 @@ jobs:
         run: chromedriver --version
 
       - name: test selenium crawler
-        run: python shopee-selenium-20221223.py
+        run: python ShopeeCrawlFinal.py
       
       - name: check file list
         run: ls -al
@@ -53,6 +53,78 @@ jobs:
 #       - name: check file list 2
 #         run: ls -al
 
+
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健綜合優蛋白.html
+          
+      - name: send telegram message2
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健綜合優蛋白.xlsx
+          
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健鉻營養素.html
+          
+      - name: send telegram message2
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健鉻營養素.xlsx
+          
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健女性營養素.html
+          
+      - name: send telegram message2
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健女性營養素.xlsx
+
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健LPN營養素.html
+          
+      - name: send telegram message2
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健LPN營養素.xlsx
 
       - name: send telegram message
         uses: appleboy/telegram-action@master
@@ -72,20 +144,58 @@ jobs:
             From: ${{ github.event.sender.login }}
           document: 三多偉力健關鍵營養素.xlsx
 
-
-      - name: send Line Notify message
-        uses: louis70109/line-notify-action@master
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
         with:
-          token: ${{ secrets.LINENOTIFYTOKEN }}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             From: ${{ github.event.sender.login }}
-          file: 三多偉力健關鍵營養素.html
-         # image_file: 三多偉力健關鍵營養素.png
+          document: 三多偉力健順暢營養素.html
+          
+      - name: send telegram message2
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健順暢營養素.xlsx
+
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健均衡營養素.html
+          
+      - name: send telegram message2
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多偉力健均衡營養素.xlsx
 
 
 
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+
+
+#       - name: send Line Notify message
+#         uses: louis70109/line-notify-action@master
+#         with:
+#           token: ${{ secrets.LINENOTIFYTOKEN }}
+#           message: |
+#             From: ${{ github.event.sender.login }}
+#           file: 三多偉力健關鍵營養素.html
+#          # image_file: 三多偉力健關鍵營養素.png
+
+
+
+
+
 
