@@ -42,7 +42,7 @@ jobs:
         run: chromedriver --version
 
       - name: test selenium crawler
-        run: python ShopeeCrawlFinal.py
+        run: python ShopeeCrawlFinalAddNew.py
       
       - name: check file list
         run: ls -al
@@ -129,9 +129,23 @@ jobs:
             From: ${{ github.event.sender.login }}
           document: 三多偉力健均衡營養素.html
           
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多補體康c經典營養配方.html
 
-
-
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            From: ${{ github.event.sender.login }}
+          document: 三多補體康高纖高鈣營養配方.html
 
 
 
